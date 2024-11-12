@@ -45,7 +45,7 @@ public class UserService implements IUserService {
 			throw new RuntimeException("User  ID is not found");
 		}
 		else {
-			user.setuId(id);
+			user.setId(id);
 			addUser(user);
 		}
 		

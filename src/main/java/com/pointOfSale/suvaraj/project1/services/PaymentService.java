@@ -42,7 +42,7 @@ public class PaymentService implements IPaymentService {
 			throw new RuntimeException("Payment  ID is not found");
 		}
 		else {
-			payment.setPayId(id);
+			payment.setId(id);
 			addPayment(payment);
 		}
 		return payment;

@@ -50,7 +50,7 @@ public class CategoryService implements ICategoryService {
 		if (repo.findById(id).isEmpty()) {
 			throw new RuntimeException("Category Id not found");
 		} else {
-			category.setcId(id);
+			category.setId(id);
 			return addCategory(category);
 		}
 	}

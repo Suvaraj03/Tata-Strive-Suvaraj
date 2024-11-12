@@ -11,11 +11,11 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table
+@Table(name="tbl_user")
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long uId;
+	private long id;
 	private String userName;
 	private String password;
 	private String role;
@@ -23,11 +23,11 @@ public class User {
 	private String phone;
 	@OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
 	private List<Sale> sales;
-	public long getuId() {
-		return uId;
+	public long getId() {
+		return id;
 	}
-	public void setuId(long uId) {
-		this.uId = uId;
+	public void setId(long id) {
+		this.id = id;
 	}
 	public String getUserName() {
 		return userName;
@@ -68,9 +68,9 @@ public class User {
 	public User() {
 		super();
 	}
-	public User(long uId, String userName, String password, String role, String email, String phone, List<Sale> sales) {
+	public User(long id, String userName, String password, String role, String email, String phone, List<Sale> sales) {
 		super();
-		this.uId = uId;
+		this.id = id;
 		this.userName = userName;
 		this.password = password;
 		this.role = role;

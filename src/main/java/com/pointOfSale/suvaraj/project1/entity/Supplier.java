@@ -13,10 +13,10 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name="tbl_supplier")
 public class Supplier {
-	public Supplier(long supId, String name, String contactPerson, String email, String phone, String address,
+	public Supplier(long id, String name, String contactPerson, String email, String phone, String address,
 			List<Product> product) {
 		super();
-		this.supId = supId;
+		this.id = id;
 		this.name = name;
 		this.contactPerson = contactPerson;
 		this.email = email;
@@ -27,11 +27,11 @@ public class Supplier {
 	public Supplier() {
 		super();
 	}
-	public long getSupId() {
-		return supId;
+	public long getId() {
+		return id;
 	}
-	public void setSupId(long supId) {
-		this.supId = supId;
+	public void setId(long id) {
+		this.id = id;
 	}
 	public String getName() {
 		return name;
@@ -71,7 +71,7 @@ public class Supplier {
 	}
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long supId;
+	private long id;
 	private String name;
 	private String contactPerson;
 	private String email;

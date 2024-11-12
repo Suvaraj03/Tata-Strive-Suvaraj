@@ -45,7 +45,7 @@ public class SupplierService implements ISupplierService {
 			throw new RuntimeException("Payment  ID is not found");
 		}
 		else {
-			supplier.setSupId(id);
+			supplier.setId(id);
 			addSupplier(supplier);
 		}
 		return supplier;

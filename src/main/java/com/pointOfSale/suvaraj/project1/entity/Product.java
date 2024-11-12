@@ -18,15 +18,15 @@ import jakarta.persistence.Table;
 public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long pId;
+	private long id;
 	private String name;
 	private String description;
 	private double price;
 	private int quantity;
-	public Product(long pId, String name, String description, double price, int quantity, Category category, String sku,
+	public Product(long id, String name, String description, double price, int quantity, Category category, String sku,
 			String barcode, List<Inventory> inventory, Supplier supplier, List<SaleItem> saleItem) {
 		super();
-		this.pId = pId;
+		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.price = price;
@@ -41,11 +41,11 @@ public class Product {
 	public Product() {
 		super();
 	}
-	public long getpId() {
-		return pId;
+	public long getId() {
+		return id;
 	}
-	public void setpId(long pId) {
-		this.pId = pId;
+	public void setId(long id) {
+		this.id = id;
 	}
 	public String getName() {
 		return name;

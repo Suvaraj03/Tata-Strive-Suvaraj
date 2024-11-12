@@ -18,10 +18,10 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name="tbl_Sale")
 public class Sale {
-	public Sale(long saleId, List<SaleItem> saleItems, Customer customer, User user, LocalDateTime date,
+	public Sale(long id, List<SaleItem> saleItems, Customer customer, User user, LocalDateTime date,
 			double totalAmount, String paymentMethod, String status, List<Payment> payment) {
 		super();
-		this.saleId = saleId;
+		this.id = id;
 		this.saleItems = saleItems;
 		this.customer = customer;
 		this.user = user;
@@ -34,11 +34,11 @@ public class Sale {
 	public Sale() {
 		super();
 	}
-	public long getSaleId() {
-		return saleId;
+	public long getId() {
+		return id;
 	}
-	public void setSaleId(long saleId) {
-		this.saleId = saleId;
+	public void setId(long id) {
+		this.id = id;
 	}
 	public List<SaleItem> getSaleItems() {
 		return saleItems;
@@ -90,7 +90,7 @@ public class Sale {
 	}
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long saleId;
+	private long id;
 	@OneToMany(mappedBy = "sale",cascade = CascadeType.ALL)
 	private List<SaleItem> saleItems;
 	@ManyToOne

@@ -50,7 +50,7 @@ public class SaleService implements ISaleService {
 			throw new RuntimeException("Sale  ID is not found");
 		}
 		else {
-			sale.setSaleId(id);
+			sale.setId(id);
 			addSale(sale);
 		}
 		

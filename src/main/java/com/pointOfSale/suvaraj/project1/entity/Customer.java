@@ -15,15 +15,15 @@ import jakarta.persistence.Table;
 public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long custId;
+	private long id;
 	private String name;
 	private String email;
 	private String phone;
 	private String address;
-	public Customer(long custId, String name, String email, String phone, String address, int loyalityPoints,
+	public Customer(long id, String name, String email, String phone, String address, int loyalityPoints,
 			List<Sale> sales) {
 		super();
-		this.custId = custId;
+		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.phone = phone;
@@ -34,11 +34,11 @@ public class Customer {
 	public Customer() {
 		super();
 	}
-	public long getCustId() {
-		return custId;
+	public long getId() {
+		return id;
 	}
-	public void setCustId(long custId) {
-		this.custId = custId;
+	public void setId(long id) {
+		this.id = id;
 	}
 	public String getName() {
 		return name;

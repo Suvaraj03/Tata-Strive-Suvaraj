@@ -17,7 +17,7 @@ import jakarta.persistence.Table;
 public class Payment {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long payId;
+	private Long id;
 	@ManyToOne
 	@JoinColumn(name="sale_Id")
 	@JsonIgnore
@@ -29,11 +29,11 @@ public class Payment {
 	private  String status;
 	private LocalDateTime date;
 	
-	public Long getPayId() {
-		return payId;
+	public Long getId() {
+		return id;
 	}
-	public void setPayId(Long payId) {
-		this.payId = payId;
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public Sale getSale() {
 		return sale;
@@ -74,10 +74,10 @@ public class Payment {
 	public Payment() {
 		super();
 	}
-	public Payment(Long payId, Sale sale, double amount, String paymentMethod, String transactionId, String status,
+	public Payment(Long id, Sale sale, double amount, String paymentMethod, String transactionId, String status,
 			LocalDateTime date) {
 		super();
-		this.payId = payId;
+		this.id = id;
 		this.sale = sale;
 		this.amount = amount;
 		this.paymentMethod = paymentMethod;

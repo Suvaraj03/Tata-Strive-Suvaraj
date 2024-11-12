@@ -43,7 +43,7 @@ public class SaleitemService implements ISaleitemService{
 			throw new RuntimeException("SaleItem  ID is not found");
 		}
 		else {
-			saleItem.setSaleId(id);
+			saleItem.setId(id);
 			addSaleItem(saleItem);
 		}
 		

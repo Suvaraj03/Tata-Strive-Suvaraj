@@ -45,7 +45,7 @@ public class CustomerService implements ICustomerService {
 		if (repo.findById(id).isEmpty()) {
 			throw new RuntimeException("Customer  ID is not found");
 		} else {
-			customer.setCustId(id);
+			customer.setId(id);
 			addCustomer(customer);
 		}
 

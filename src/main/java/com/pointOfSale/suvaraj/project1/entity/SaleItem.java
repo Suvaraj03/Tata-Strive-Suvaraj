@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
@@ -15,18 +16,18 @@ import jakarta.persistence.Table;
 public class SaleItem {
 	@Id
 	@GeneratedValue(strategy =GenerationType.IDENTITY )
-	private long Id;
+	private long id;
 	@ManyToOne
 	@JoinColumn(name="Product_id")
 	@JsonIgnore
 	private Product product;
 	@ManyToOne
-	@JoinColumn(name="sale_Id")
+	@JoinColumn(name="sale_id")
 	@JsonIgnore
 	private Sale sale;
-	public SaleItem(long Id, Product product, Sale sale, int quantity, double price) {
+	public SaleItem(long id, Product product, Sale sale, int quantity, double price) {
 		super();
-		this.Id = Id;
+		this.id = id;
 		this.product = product;
 		this.sale = sale;
 		this.quantity = quantity;
@@ -35,11 +36,11 @@ public class SaleItem {
 	public SaleItem() {
 		super();
 	}
-	public long getSaleId() {
-		return Id;
+	public long getId() {
+		return id;
 	}
-	public void setSaleId(long saleId) {
-		this.Id = saleId;
+	public void setId(long saleid) {
+		this.id = saleid;
 	}
 	public Product getProduct() {
 		return product;

@@ -13,9 +13,9 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name="tbl_category")
 public class Category {
-	public Category(long cId, String name, String description, List<Product> products) {
+	public Category(long id, String name, String description, List<Product> products) {
 		super();
-		this.cId = cId;
+		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.products = products;
@@ -23,11 +23,11 @@ public class Category {
 	public Category() {
 		super();
 	}
-	public long getcId() {
-		return cId;
+	public long getid() {
+		return id;
 	}
-	public void setcId(long cId) {
-		this.cId = cId;
+	public void setId(long id) {
+		this.id = id;
 	}
 	public String getName() {
 		return name;
@@ -49,7 +49,7 @@ public class Category {
 	}
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long cId;
+	private long id;
 	private String name;
 	private String description;
 	@OneToMany(mappedBy = "category",cascade = CascadeType.ALL)

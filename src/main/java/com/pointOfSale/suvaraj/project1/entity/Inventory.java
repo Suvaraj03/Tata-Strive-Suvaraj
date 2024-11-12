@@ -15,18 +15,18 @@ import jakarta.persistence.Table;
 public class Inventory {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long inId;
+	private long id;
 	@ManyToOne
 	@JoinColumn(name="product_Id")
 	@JsonIgnore
 	private Product product;
 	
-	public long getInId() {
-		return inId;
+	public long getId() {
+		return id;
 	}
-	public Inventory(long inId, Product product, int quantityInStock, int reorderLevel) {
+	public Inventory(long id, Product product, int quantityInStock, int reorderLevel) {
 		super();
-		this.inId = inId;
+		this.id = id;
 		this.product = product;
 		this.quantityInStock = quantityInStock;
 		this.reorderLevel = reorderLevel;
@@ -34,8 +34,8 @@ public class Inventory {
 	public Inventory() {
 		super();
 	}
-	public void setInId(long inId) {
-		this.inId = inId;
+	public void setId(long id) {
+		this.id = id;
 	}
 	public Product getProduct() {
 		return product;

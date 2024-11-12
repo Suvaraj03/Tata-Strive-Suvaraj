@@ -49,7 +49,7 @@ public class ProductService implements IProductService{
 			throw new RuntimeException("Product  ID is not found");
 		}
 		else {
-			product.setpId(id);
+			product.setId(id);
 			addProduct(product);
 		}
 		return product;

@@ -44,7 +44,7 @@ public class InventoryService implements IInventoryService{
 			throw new RuntimeException("Inventory  ID is not found");
 		}
 		else {
-			inventory.setInId(id);
+			inventory.setId(id);
 			addInventory(inventory);
 		}
 		
